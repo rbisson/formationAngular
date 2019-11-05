@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes, Router } from '@angular/router';
-import { PageLoginComponent } from './login/pages/page-login/page-login.component';
+import { RouterModule, Routes, Router, PreloadAllModules } from '@angular/router';
 
 const appRoutes: Routes = [
-  { path: 'login', component: PageLoginComponent },
   //  { path: 'hero/:id',      component: HeroDetailComponent },
   /* {
      path: 'heroes',
@@ -34,7 +32,10 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: false } // <-- debugging purposes only
+      {
+        enableTracing: false,
+        preloadingStrategy: PreloadAllModules
+      }
     )
   ]
 })
