@@ -2,13 +2,7 @@
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">Type</th>
-        <th scope="col">Client</th>
-        <th scope="col">NbJours</th>
-        <th scope="col">TjmHT</th>
-        <th scope="col">Total HT</th>
-        <th scope="col">Total TTC</th>
-        <th scope="col">State</th>
+        <th scope="col" *ngFor="let item of headers">{{ item }}</th>
       </tr>
     </thead>
     <tbody>
@@ -16,11 +10,11 @@
         <td>{{ item.typePresta }}</td>
         <td>{{ item.client }}</td>
         <td>{{ item.nbJours }}</td>
-        <td>{{ item.tjmHt }}</td>
-        <td>{{ item.totalHt() }}</td>
-        <td>{{ item.totalTtc() }}</td>
+        <td>{{ item.tjmHt | currency:'EUR'}}</td>
+        <td>{{ item | total | currency:'EUR'}}</td>
+        <td>{{ item | total:item.tauxTva | currency:'EUR'}}</td>
         <td>{{ item.state }}</td>
       </tr>
     </tbody>
   </table>
-</div>
+ </div>
