@@ -19,7 +19,6 @@ export class StateDirective implements OnChanges {
   }
 }
 
-
 // si appState vaut Option => state-option
 // si appState vaut Annulé => state-annule
 // si appState vaut Confirmé => state-confirm

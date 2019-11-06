@@ -1,0 +1,12 @@
+@import 'theme';
+#table-light {
+ .state-annule {
+   background: $color-error;
+ }
+ .state-option {
+   background: $color2;
+ }
+ .state-confirme {
+   background: $color-success;
+ }
+}
