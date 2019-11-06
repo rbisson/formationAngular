@@ -7,7 +7,6 @@ export class StateDirective implements OnChanges {
   @Input() appState: any;
   @HostBinding('class') hostAttr: string;
   constructor() {
-    console.log(this.appState);
    }
 
    ngOnChanges() {

@@ -12,6 +12,8 @@ export class PageClientsComponent implements OnInit {
   public collection: Client[];
   public headers: string[];
   public states = Object.values(StateClient);
+  public title: string;
+  public label: string;
   constructor(private clientsService: ClientsService) {
   }
 
@@ -23,6 +25,9 @@ export class PageClientsComponent implements OnInit {
       'Email',
       'State'
     ];
+
+    this.title = 'Clients';
+    this.label = 'Tous les clients';
   }
 
   public update(item: any, event: any) {
