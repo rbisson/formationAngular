@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientsService } from '../../services/clients.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Client } from 'src/app/shared/models/client';
 
 @Component({
   selector: 'app-page-add-client',
@@ -12,7 +13,8 @@ export class PageAddClientComponent implements OnInit {
   public label: string;
   constructor(
     private clientService: ClientsService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
     this.route.data.subscribe((donnees) => {
@@ -20,4 +22,10 @@ export class PageAddClientComponent implements OnInit {
       this.label = donnees.label;
     });
   }
+
+  public add(item: Client) {
+    this.clientService.add(item);
+    this.router.navigate(['../'], {relativeTo: this.route});
+  }
+
 }

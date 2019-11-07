@@ -21,7 +21,7 @@ export class PrestationsService {
       map((tab) => {
         return tab.map((obj) => {
           return new Prestation(obj);
-        })
+        });
       })
     );
   }

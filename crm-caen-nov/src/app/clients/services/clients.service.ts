@@ -31,6 +31,9 @@ export class ClientsService {
 
   // add item in collection
 
+  public add(item: Client) {
+    this.collection.push(new Client(item));
+  }
   // delete item in collection
   // get item by id
 }
