@@ -4,13 +4,18 @@ import { PagePrestationsComponent } from './pages/page-prestations/page-prestati
 import { PrestationsRoutingModule } from './prestations-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { PageAddPrestationComponent } from './pages/page-add-prestation/page-add-prestation.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormPrestationComponent } from './components/form-prestation/form-prestation.component';
 
 @NgModule({
-  declarations: [PagePrestationsComponent, PageAddPrestationComponent],
+  declarations: [PagePrestationsComponent, PageAddPrestationComponent, FormPrestationComponent],
   imports: [
     CommonModule,
     PrestationsRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class PrestationsModule { }
+
+
