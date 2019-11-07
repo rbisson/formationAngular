@@ -24,13 +24,15 @@ export class PrestationsService {
     this.pCollection = col;
   }
 
-   // update item in collection
-   public update(item: Prestation, state: State) {
+  // update item in collection
+  public update(item: Prestation, state: State) {
     item.state = state;
-   }
+  }
 
   // add item in collection
-
+  public add(item: Prestation) {
+    this.collection.push(new Prestation(item));
+  }
   // delete item in collection
   // get item by id
 }
