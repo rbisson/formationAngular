@@ -4,10 +4,11 @@ import { PageClientsComponent } from './pages/page-clients/page-clients.componen
 import { ClientsRoutingModule } from './clients-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { PageAddClientComponent } from './pages/page-add-client/page-add-client.component';
+import { FormClientComponent } from './components/form-client/form-client.component';
 
 
 @NgModule({
-  declarations: [PageClientsComponent, PageAddClientComponent],
+  declarations: [PageClientsComponent, PageAddClientComponent, FormClientComponent],
   imports: [
     CommonModule,
     ClientsRoutingModule,

@@ -21,7 +21,11 @@ export class PagePrestationsComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
   ngOnInit() {
-    this.collection = this.prestationService.collection;
+    // this.collection = this.prestationService.collection;
+    this.prestationService.collection.subscribe((data) => {
+      this.collection = data;
+    });
+
     // console.log(this.prestationService.collection);
     this.headers = [
       'Type',
