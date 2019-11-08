@@ -6,9 +6,10 @@ import { SharedModule } from '../shared/shared.module';
 import { PageAddPrestationComponent } from './pages/page-add-prestation/page-add-prestation.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormPrestationComponent } from './components/form-prestation/form-prestation.component';
+import { PageEditComponent } from './pages/page-edit/page-edit.component';
 
 @NgModule({
-  declarations: [PagePrestationsComponent, PageAddPrestationComponent, FormPrestationComponent],
+  declarations: [PagePrestationsComponent, PageAddPrestationComponent, FormPrestationComponent, PageEditComponent],
   imports: [
     CommonModule,
     PrestationsRoutingModule,

@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { PrestationsService } from '../../services/prestations.service';
 import { Prestation } from 'src/app/shared/models/prestation';
 import { State } from 'src/app/shared/enums/state.enum';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription, Observable } from 'rxjs';
 @Component({
   selector: 'app-page-prestations',
@@ -22,7 +22,8 @@ export class PagePrestationsComponent implements OnInit, OnDestroy {
   sub: Subscription;
   constructor(
     private prestationService: PrestationsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
   ngOnInit() {
     this.collection$ = this.prestationService.collection;
@@ -38,7 +39,8 @@ export class PagePrestationsComponent implements OnInit, OnDestroy {
       'TjmHT',
       'Total HT',
       'Total TTC',
-      'State'
+      'State',
+      'Action'
     ];
 
     this.labelBtn = 'Ajouter une prestation';
@@ -55,6 +57,16 @@ export class PagePrestationsComponent implements OnInit, OnDestroy {
       // traiter res api
       item.state = event.target.value;
     });
+  }
+
+  public doAction(action: string, item: Prestation) {
+    if (action === 'delete') {
+      this.prestationService.delete(item);
+    }
+
+    if (action === 'edit') {
+      this.router.navigate(['prestations/edit', item.id]);
+    }
   }
 
   ngOnDestroy(): void {
